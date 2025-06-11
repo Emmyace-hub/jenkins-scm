@@ -1,7 +1,7 @@
 #!/bin/sh
 
-echo "🔧 Building the project..."
+echo "Building the project..."
 npm install
 
-echo "🧪 Running tests..."
+echo "Running tests..."
 npm test
