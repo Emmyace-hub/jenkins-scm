@@ -1,33 +1,7 @@
-pipeline {
-    agent any
+#!/bin/bash
 
-    stages {
-        stage('Checkout Code') {
-            steps {
-                git url: 'https://github.com/Emmyace-hub/jenkins-scm.git', branch: 'main'
-            }
-        }
+echo "🔧 Building the project..."
+npm install
 
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm install'
-            }
-        }
-
-        stage('Run Tests') {
-            steps {
-                sh 'npm test'
-            }
-        }
-    }
-
-    post {
-        always {
-            echo '✅ Pipeline execution completed!'
-        }
-        failure {
-            echo '❌ Build or test failed.'
-        }
-    }
-}
-
+echo "🧪 Running tests..."
+npm test
